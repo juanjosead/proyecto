@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Citamed – Reserva tu Cita</title>
+  <link rel="stylesheet" href="estilos.css"/>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="LOGO.JPG" alt="Logo Citamed" class="logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="agendar.html">Agendar Cita</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="agenda-main">
+    <div class="card reserva-card">
+      <h1>Reserva tu Cita Médica</h1>
+      <form id="reserva-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="especialidad">Especialidad</label>
+            <select id="especialidad" required>
+              <option value="">Selecciona…</option>
+              <option>Medicina General</option>
+              <option>Pediatría</option>
+              <option>Odontología</option>
+              <option>Dermatología</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="doctor">Doctor</label>
+            <select id="doctor" required>
+              <option value="">Selecciona…</option>
+              <option>Dr. López</option>
+              <option>Dra. Martínez</option>
+              <option>Dr. García</option>
+              <option>Dra. Ramírez</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" required/>
+          </div>
+          <div class="form-group">
+            <label for="hora">Hora</label>
+            <select id="hora" required>
+              <option value="">Selecciona…</option>
+              <option>08:00 AM</option>
+              <option>09:00 AM</option>
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>02:00 PM</option>
+              <option>03:00 PM</option>
+              <option>04:00 PM</option>
+              <option>05:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <label for="notas">Notas (opcional)</label>
+        <textarea id="notas" rows="3" placeholder="Comentarios adicionales…"></textarea>
+        <button type="submit" class="btn-primary">Confirmar Reserva</button>
+      </form>
+    </div>
+  </main>
+
+  <section class="social-section">
+    <div class="social-icons"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Citamed. Todos los derechos reservados.</p>
+  </footer>
+
+  <div id="chat-widget">
+    <div id="chat-header">Chat con Citamed <span id="chat-close">×</span></div>
+    <div id="chat-body"></div>
+    <div id="chat-footer">
+      <input type="text" id="chat-input" placeholder="Escribe tu mensaje..."/>
+      <button id="chat-send">Enviar</button>
+    </div>
+  </div>
+
+  <script src="social.js"></script>
+  <script src="chat.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('citamed_registered')!=='true') {
+        alert('Debes registrarte primero.');
+        return window.location.href='agendar.html';
+      }
+      document.getElementById('reserva-form').addEventListener('submit', e=>{
+        e.preventDefault();
+        const esp   = document.getElementById('especialidad').value;
+        const doc   = document.getElementById('doctor').value;
+        const fecha = document.getElementById('fecha').value;
+        const hora  = document.getElementById('hora').value;
+        const notas = document.getElementById('notas').value;
+        const lista = JSON.parse(localStorage.getItem('citamed_reservations')||'[]');
+        lista.push({ especialidad:esp, doctor:doc, fecha, hora, notas });
+        localStorage.setItem('citamed_reservations', JSON.stringify(lista));
+        alert(`✅ Cita reservada:\n${esp} - ${doc} el ${fecha} a las ${hora}`);
+        e.target.reset();
+      });
+    });
+  </script>
+</body>
+</html>

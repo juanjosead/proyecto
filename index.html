@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Citamed - Agenda de Citas Médicas</title>
+  <link rel="stylesheet" href="estilos.css"/>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <!-- Header con login de admin -->
+  <header>
+    <div class="logo-container">
+      <img src="LOGO.JPG" alt="Logo Citamed" class="logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="agendar.html">Agendar Cita</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="admin-login">
+      <input type="text" id="admin-username" placeholder="Usuario Admin"/>
+      <input type="password" id="admin-password" placeholder="Contraseña"/>
+      <button id="admin-login-btn">Login Admin</button>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="banner">
+    <h1>Bienvenidos a Citamed</h1>
+    <p>Plataforma digital para agendar tus citas médicas de forma rápida y sencilla.</p>
+  </section>
+
+  <!-- Servicios -->
+  <section class="servicios">
+    <article>
+      <h2>¿Por qué usar Citamed?</h2>
+      <p>Con nuestra agenda de citas médicas podrás reservar, consultar y organizar tus citas sin salir de casa.</p>
+    </article>
+    <div class="servicios-grid">
+      <div class="servicio-card">
+        <h3>Reserva en Línea</h3>
+        <p>Elige día y hora según la disponibilidad del consultorio.</p>
+      </div>
+      <div class="servicio-card">
+        <h3>Especialidades Médicas</h3>
+        <p>Selecciona el tipo de consulta médica que necesitas.</p>
+      </div>
+      <div class="servicio-card">
+        <h3>Confirmación de Citas</h3>
+        <p>Recibe confirmaciones de tus citas en pantalla y por correo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Redes sociales -->
+  <section class="social-section">
+    <div class="social-icons"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Citamed. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Chatbot flotante -->
+  <div id="chat-widget">
+    <div id="chat-header">Chat con Citamed <span id="chat-close">×</span></div>
+    <div id="chat-body"></div>
+    <div id="chat-footer">
+      <input type="text" id="chat-input" placeholder="Escribe tu mensaje..."/>
+      <button id="chat-send">Enviar</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="social.js"></script>
+  <script src="chat.js"></script>
+  <script>
+    // Login de Administrador
+    document.getElementById('admin-login-btn').addEventListener('click', () => {
+      const u = document.getElementById('admin-username').value;
+      const p = document.getElementById('admin-password').value;
+      if (u === 'admin1' && p === '123') {
+        localStorage.setItem('citamed_role', 'admin');
+        alert('✔️ Bienvenido, Administrador');
+        window.location.href = 'admin.html';
+      } else {
+        alert('❌ Credenciales incorrectas');
+      }
+    });
+  </script>
+</body>
+</html>
