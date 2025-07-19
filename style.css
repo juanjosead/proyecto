@@ -1,0 +1,175 @@
+/* === RESET === */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+/* === BASE === */
+body { font-family: Arial, sans-serif; background:#f5f5f5; color:#333; }
+
+/* === HEADER === */
+.header {
+  background:#2c3e50; padding:1rem 2rem;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.logo { height:50px; }
+.nav ul { display:flex; list-style:none; }
+.nav ul li + li { margin-left:1.5rem; }
+.nav a { color:white; text-decoration:none; font-weight:bold; transition:color .3s; }
+.nav a:hover { color:#3498db; }
+
+/* === HERO === */
+.hero {
+  background:#3498db; color:white; text-align:center; padding:5rem 2rem;
+  position: relative;
+}
+.hero h1 { font-size:2.8rem; margin-bottom:1rem; text-shadow:1px 1px 2px rgba(0,0,0,.2); }
+.hero p { font-size:1.1rem; margin-bottom:2rem; }
+.btn-primary {
+  background:#27ae60; color:white; padding:.8rem 2rem;
+  border:none; border-radius:4px; text-decoration:none;
+  font-weight:bold; transition:background .3s;
+}
+.btn-primary:hover { background:#219150; }
+
+/* === FEATURES === */
+.features {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:2rem; padding:3rem 2rem; background:#fff;
+}
+.feature-card {
+  background:#ecf0f1; padding:2rem; border-radius:8px; text-align:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  transition:transform .3s, box-shadow .3s;
+}
+.feature-card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+.feature-card i { color:#3498db; margin-bottom:.75rem; }
+
+/* === SECCIONES BLANCAS === */
+.section-white {
+  padding:3rem 2rem; background:#fff; text-align:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+.section-white h2 { margin-bottom:1rem; font-size:1.8rem; }
+
+/* === CONTACT FORM === */
+.contacto .contact-form {
+  max-width:500px; margin:1rem auto; display:flex; flex-direction:column; gap:1rem;
+}
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  padding:1rem; border:1px solid #ccc; border-radius:4px; font-size:1rem;
+}
+.btn-secondary {
+  background:#2980b9; color:white; border:none; cursor:pointer;
+  transition:background .3s;
+}
+.btn-secondary:hover { background:#1f5f8a; }
+
+/* === SOCIAL ICONS === */
+.social-section {
+  background:#fff; padding:1.5rem 0; text-align:center;
+}
+.social-icons a {
+  margin:0 .5rem; font-size:1.5rem; color:#0a2342; transition:color .3s;
+}
+.social-icons a:hover { color:#3498db; }
+
+/* === FOOTER === */
+.footer {
+  background:#0a2342; color:white; text-align:center; padding:1rem 0;
+}
+
+/* === FORM-CONTAINER (Registro/Admin/Reserva) === */
+.form-container {
+  max-width:400px; margin:3rem auto; background:#fff; padding:2rem;
+  border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  text-align:center;
+}
+.form-container h1 { margin-bottom:1.5rem; font-size:1.8rem; }
+.tabs {
+  display:flex; justify-content:center; margin-bottom:1.5rem;
+}
+.tab {
+  flex:1; padding:.75rem 0; cursor:pointer; background:#ecf0f1;
+  border:none; font-weight:bold; transition:background .3s;
+}
+.tab + .tab { margin-left:.5rem; }
+.tab.active { background:#3498db; color:white; }
+
+/* Panels */
+.form-panel {
+  display:flex; flex-direction:column; gap:1rem;
+}
+.form-panel.hidden { display:none; }
+.form-panel input,
+.form-panel select,
+.form-panel button {
+  width:100%; padding:.75rem; font-size:1rem; border:1px solid #ccc; border-radius:4px;
+}
+.btn-secondary { background:#2980b9; color:white; }
+.btn-primary { background:#27ae60; color:white; border:none; }
+.btn-primary:hover { background:#219150; }
+.btn-secondary:hover { background:#1f5f8a; }
+
+/* === ADMIN PANEL === */
+.admin-panel {
+  max-width:800px; margin:3rem auto; background:#fff; padding:2rem;
+  border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+.admin-panel table {
+  width:100%; border-collapse:collapse; margin-top:1rem;
+}
+.admin-panel th, .admin-panel td {
+  border:1px solid #ddd; padding:.75rem; text-align:left;
+}
+.admin-panel th { background:#2c3e50; color:white; }
+
+/* === CHATBOT === */
+#chat-widget { position:fixed; bottom:1rem; right:1rem; z-index:1000; }
+#chat-toggle {
+  background:#3498db; color:white; border:none; padding:.6rem 1rem;
+  border-radius:20px; cursor:pointer; font-size:.9rem;
+  box-shadow:0 2px 6px rgba(0,0,0,0.3);
+}
+#chat-window {
+  width:280px; max-height:380px; background:white; border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2); overflow:hidden;
+  display:flex; flex-direction:column; margin-top:.5rem;
+}
+#chat-window.hidden { display:none; }
+#chat-header {
+  background:#2c3e50; color:white; padding:.5rem;
+  display:flex; justify-content:space-between; align-items:center;
+}
+#chat-header button {
+  background:transparent; border:none; color:white; font-size:1.2rem; cursor:pointer;
+}
+#chat-body {
+  flex:1; padding:.5rem; overflow-y:auto; font-size:.85rem;
+}
+.chat-msg { margin:.5rem 0; }
+.chat-msg.user { text-align:right; }
+.chat-msg.bot { text-align:left; }
+.bubble {
+  display:inline-block; padding:.4rem .75rem; border-radius:12px; max-width:80%;
+}
+.chat-msg.user .bubble { background:#3498db; color:white; }
+.chat-msg.bot .bubble { background:#ecf0f1; color:#333; }
+#chat-form { display:flex; border-top:1px solid #ddd; }
+#chat-input {
+  flex:1; padding:.5rem; border:none; font-size:.85rem;
+}
+#chat-input:focus { outline:none; }
+#chat-form button {
+  background:#27ae60; border:none; padding:0 1rem; color:white; cursor:pointer;
+}
+
+/* === RESPONSIVE === */
+@media(max-width:768px){
+  .header { flex-direction:column; }
+  .nav ul { flex-direction:column; align-items:center; }
+  .nav ul li + li { margin:.5rem 0; }
+  .hero { padding:3rem 1rem; }
+}

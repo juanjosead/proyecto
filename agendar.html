@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Citamed – Registro / Admin</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pVnY1xvX..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <img src="LOGO.JPG" alt="Logo Citamed" class="logo" />
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="agendar.html">Agendar Cita</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Registro / Login Admin -->
+  <main class="form-container">
+    <h1>Acceso a Citamed</h1>
+    <div class="tabs">
+      <button id="tab-reg" class="tab active">Registro</button>
+      <button id="tab-log" class="tab">Login Admin</button>
+    </div>
+
+    <!-- Form Registro -->
+    <form id="form-reg" class="form-panel">
+      <input type="text" id="nombre" placeholder="Nombre completo" required />
+      <input type="email" id="correo" placeholder="Correo electrónico" required />
+      <input type="password" id="clave" placeholder="Contraseña" required />
+      <button type="button" onclick="registrarse()" class="btn-primary">Registrarse</button>
+    </form>
+
+    <!-- Form Login Admin -->
+    <form id="form-log" class="form-panel hidden">
+      <input type="text" id="admin-user" placeholder="Usuario Admin" />
+      <input type="password" id="admin-pass" placeholder="Contraseña Admin" />
+      <button type="button" onclick="loginAdmin()" class="btn-secondary">Ingresar Admin</button>
+    </form>
+  </main>
+
+  <!-- Redes sociales + Chat -->
+  <section class="social-section">
+    <div class="social-icons"></div>
+  </section>
+  <div id="chat-widget">…</div>
+
+  <footer class="footer">
+    <p>© 2025 Citamed. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="registro.js"></script>
+  <script src="social.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>

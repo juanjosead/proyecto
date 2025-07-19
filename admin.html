@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Citamed – Panel Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <img src="LOGO.JPG" alt="Logo Citamed" class="logo" />
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="agendar.html">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-panel">
+    <h1>Panel de Administración</h1>
+    <p>Aquí podrás ver y gestionar las reservas realizadas.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Usuario</th><th>Especialidad</th><th>Doctor</th>
+          <th>Fecha</th><th>Hora</th><th>Notas</th>
+        </tr>
+      </thead>
+      <tbody id="admin-list">
+        <!-- Filas inyectadas por registro.js -->
+      </tbody>
+    </table>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Citamed. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="social.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>

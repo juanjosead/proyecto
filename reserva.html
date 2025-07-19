@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Citamed – Reserva Cita</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <img src="LOGO.JPG" alt="Logo Citamed" class="logo" />
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="agendar.html">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="form-container">
+    <h1>Reserva tu Cita Médica</h1>
+    <form id="res-form" class="form-panel">
+      <label>Especialidad</label>
+      <select required>
+        <option value="">Selecciona...</option>
+        <option>Medicina General</option>
+        <option>Pediatría</option>
+        <option>Dermatología</option>
+      </select>
+
+      <label>Doctor</label>
+      <select required>
+        <option value="">Selecciona...</option>
+        <option>Dr. López</option>
+        <option>Dra. Martínez</option>
+      </select>
+
+      <label>Fecha</label>
+      <input type="date" required />
+
+      <label>Hora</label>
+      <input type="time" required />
+
+      <label>Notas (opcional)</label>
+      <textarea rows="3"></textarea>
+
+      <button type="submit" class="btn-primary">Confirmar Reserva</button>
+    </form>
+  </main>
+
+  <section class="social-section">
+    <div class="social-icons"></div>
+  </section>
+  <footer class="footer">
+    <p>© 2025 Citamed. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="social.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CitaMed – Registro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CitaMed</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Registro</a>
+      <a href="reserva.html">Reservar Cita</a>
+    </nav>
+  </header>
+
+  <main class="card">
+    <h2>Registro de Usuario</h2>
+    <form id="form-registro">
+      <label for="nombre">Nombre completo</label>
+      <input id="nombre" type="text" required />
+
+      <label for="correo">Correo electrónico</label>
+      <input id="correo" type="email" required />
+
+      <label for="clave">Contraseña</label>
+      <input id="clave" type="password" required />
+
+      <button type="submit">Registrarse</button>
+    </form>
+  </main>
+
+  <footer>
+    © 2025 CitaMed. Todos los derechos reservados.
+  </footer>
+
+  <!-- Vinculamos los scripts -->
+  <script src="registro.js"></script>
+  <script src="social.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>

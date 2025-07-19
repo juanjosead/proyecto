@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Citamed – Inicio</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pVnY1xvX..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <img src="LOGO.JPG" alt="Logo Citamed" class="logo" />
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="agendar.html">Agendar Cita</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Bienvenidos a Citamed</h1>
+    <p>Plataforma digital para agendar tus citas médicas de forma rápida y sencilla.</p>
+    <a href="agendar.html" class="btn-primary">Regístrate y Reserva</a>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="feature-card">
+      <i class="fas fa-calendar-check fa-2x"></i>
+      <h2>Reserva en Línea</h2>
+      <p>Elige día y hora según disponibilidad.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-user-md fa-2x"></i>
+      <h2>Especialidades</h2>
+      <p>Selecciona tu tipo de consulta médica.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-envelope-open-text fa-2x"></i>
+      <h2>Confirmación</h2>
+      <p>Recibe confirmaciones en pantalla y por correo.</p>
+    </div>
+  </section>
+
+  <!-- Nosotros -->
+  <section id="nosotros" class="section-white">
+    <h2>¿Quiénes Somos?</h2>
+    <p>En Citamed facilitamos la gestión de citas médicas conectando pacientes y profesionales.</p>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="section-white contacto">
+    <h2>Contacto</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Tu nombre" required />
+      <input type="email" placeholder="Tu correo" required />
+      <textarea rows="4" placeholder="Tu mensaje" required></textarea>
+      <button type="submit" class="btn-secondary">Enviar Mensaje</button>
+    </form>
+  </section>
+
+  <!-- Redes sociales -->
+  <section class="social-section">
+    <div class="social-icons"></div>
+  </section>
+
+  <!-- Chatbot -->
+  <div id="chat-widget">
+    <button id="chat-toggle"><i class="fas fa-comments"></i> Chat</button>
+    <div id="chat-window" class="hidden">
+      <div id="chat-header">
+        Ayuda Citamed
+        <button id="chat-close">&times;</button>
+      </div>
+      <div id="chat-body"></div>
+      <form id="chat-form">
+        <input type="text" id="chat-input" placeholder="Escribe tu pregunta..." autocomplete="off" />
+        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Citamed. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="social.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CitaMed – Registro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CitaMed</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Registro</a>
+      <a href="reserva.html">Reservar Cita</a>
+    </nav>
+  </header>
+
+  <main class="card">
+    <h2>Registro de Usuario</h2>
+    <form id="form-registro">
+      <label for="nombre">Nombre completo</label>
+      <input id="nombre" type="text" required />
+
+      <label for="correo">Correo electrónico</label>
+      <input id="correo" type="email" required />
+
+      <label for="clave">Contraseña</label>
+      <input id="clave" type="password" required />
+
+      <button type="submit">Registrarse</button>
+    </form>
+  </main>
+
+  <footer>
+    © 2025 CitaMed. Todos los derechos reservados.
+  </footer>
+
+  <!-- Vinculamos los scripts -->
+  <script src="registro.js"></script>
+  <script src="social.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>
